@@ -29,11 +29,9 @@ public class Category implements Serializable {
 	private Instant updatedAt;
 
 	public Category() {
-		super();
 	}
 
 	public Category(Long id, String name) {
-		super();
 		this.id = id;
 		this.name = name;
 	}
