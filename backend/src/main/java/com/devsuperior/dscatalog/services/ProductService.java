@@ -57,12 +57,12 @@ public class ProductService {
 			Product entity = repository.getReferenceById(id);
 			copyDTOtoEntity(dto, entity);
 			entity = repository.save(entity);
+			return new ProductDTO(entity);
 
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException("id not found: " + id);
 		}
 
-		return null;
 	}
 
 	public void delete(Long id) {

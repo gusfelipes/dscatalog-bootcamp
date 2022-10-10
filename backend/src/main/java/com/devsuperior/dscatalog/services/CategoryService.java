@@ -51,12 +51,12 @@ public class CategoryService {
 			Category entity = repository.getReferenceById(id);
 			entity.setName(dto.getName());
 			entity = repository.save(entity);
+			return new CategoryDTO(entity);
 
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException("id not found: " + id);
 		}
 
-		return null;
 	}
 
 	public void delete(Long id) {
